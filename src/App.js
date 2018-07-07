@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import ChocoboNew from './components/ChocoboNew';
+import ChocoboList from './components/ChocoboList';
 
 const App = () =>
-  <div>
-    <h1>title</h1>
-    <p>body</p>
+  <div id="main" className="container-fluid">
+    <h1>ChocoGlaive</h1>
+    <ChocoboNew />
+    <ChocoboList />
   </div>;
 
 export default App;
