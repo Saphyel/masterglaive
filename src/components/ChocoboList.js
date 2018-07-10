@@ -1,18 +1,14 @@
 import React from 'react';
+import TableHead from './TableHead';
+import TableBody from './TableBody';
 
 const ChocoboList = () =>
   <div className="table-responsive">
     <table id="chocolist" className="table table-striped table-sm">
-      <thead className="thead-dark">
-        <tr>
-          <th scope="col">HP</th>
-          <th scope="col">Attack</th>
-          <th scope="col">Speed</th>
-          <th scope="col">Rate</th>
-        </tr>
-      </thead>
-      <tbody id="choco-content">
-      </tbody>
+      <TableHead
+        options={['HP','Attack','Speed','Colour', 'Value']}/>
+      <TableBody
+        name="choco-content"/>
     </table>
   </div>;
 

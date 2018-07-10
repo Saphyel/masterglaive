@@ -5,13 +5,14 @@ import Dropdown from './form/Dropdown';
 class ChocoboNew extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
-    const formPayload = {
-      hp: this.state.hp,
-      attack: this.state.attack,
-      speed: this.state.speed,
-      colour: this.state.colour
-    };
-    console.log('Send this in a POST request:', formPayload)
+    const form = e.target;
+    const payload = {
+      hp: form.hp.value,
+      attack: form.attack.value,
+      speed: form.speed.value,
+      colour: form.colour.value
+    }
+    console.log('message', payload);
   }
   render() {
     return (

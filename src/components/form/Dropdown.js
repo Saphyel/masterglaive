@@ -6,7 +6,7 @@ const Dropdown = (props) =>
     <label htmlFor={props.name} className="form-label">{props.title}</label>
     <select
       name={props.name}
-      value={props.selectedOption}
+      defaultValue={props.selectedOption}
       className="form-select form-control">
       {props.options.map(opt => {
         return (

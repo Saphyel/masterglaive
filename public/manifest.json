@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ChocoGlaive",
+  "name": "ChocoGlaive rank calculator",
   "icons": [
     {
       "src": "favicon.ico",
