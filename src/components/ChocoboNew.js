@@ -15,6 +15,7 @@ class ChocoboNew extends React.Component {
       colour: form.colour.value
     }
     await set(uuidv1(), payload);
+    window.location.reload();
   }
   render() {
     return (

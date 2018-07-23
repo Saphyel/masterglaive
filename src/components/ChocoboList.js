@@ -9,7 +9,7 @@ class ChocoboList extends React.Component {
     this.state = {stable: []};
   }
 
-  async setList() {
+  async getItems() {
     let payload = [];
     const Ids = await keys();
     for (var i = 0; i < Ids.length; i++) {
@@ -19,8 +19,7 @@ class ChocoboList extends React.Component {
   }
 
   async componentDidMount() {
-    this.setState(await this.setList());
-    console.log(this.state);
+    this.setState(await this.getItems());
   }
 
   render() {
