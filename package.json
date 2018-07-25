@@ -10,8 +10,9 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-beta.34",
     "gh-pages": "^1.2.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "^2.0.0-next.b2fd8db8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,5 +20,18 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">9%",
+      "last 3 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }
