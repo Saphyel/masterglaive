@@ -5,12 +5,12 @@ import ContentTable from './components/ContentTable';
 
 const App = () =>
   <div id="main" className="container-fluid text-center">
-    <h1>ChocoGlaive</h1>
+    <h1>MasterGlaive</h1>
     <p>Get the score of the chocobos of your stable.
     So you will release your weakest chocobo.</p>
     <ContentTable
       description="Max level"
-      head={[99,80,50,30,20]}
+      head={["lvl 99","lvl 80","lvl 50","lvl 30","lvl 20"]}
       body={[
         "This bird roosts at the top of the pecking order!",
         "This bird's plumage exudes an air of prestige",
