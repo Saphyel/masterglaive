@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const SingleInput = (props) =>
-  <div className="col">
-    <label htmlFor={props.name} className="form-label">{props.title}</label>
-    <input
-      className="form-input form-control"
-      name={props.name}
+  <FormControl>
+    <InputLabel htmlFor={props.name}>{props.title}</InputLabel>
+    <Input
+      id={props.name}
       type={props.inputType}
+      placeholder={props.placeholder}
       value={props.content}
-      placeholder={props.placeholder} />
-  </div>;
+      inputProps={{
+        'aria-label': 'Description',
+      }}
+    />
+  </FormControl>;
 
 SingleInput.propTypes = {
   inputType: PropTypes.oneOf(['text', 'number']).isRequired,

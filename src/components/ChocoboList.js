@@ -1,6 +1,10 @@
 import React from 'react';
-import TableHead from './TableHead';
-import TableBody from './TableBody';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import Title from './Title';
+import TableHeader from './TableHeader';
+import TableContent from './TableContent';
 import { get, keys } from 'idb-keyval';
 
 class ChocoboList extends React.Component {
@@ -24,16 +28,17 @@ class ChocoboList extends React.Component {
 
   render() {
     return (
-      <div className="table-responsive">
-        <h2>Stable of Chocobos</h2>
-        <table id="chocolist" className="table table-striped table-sm">
-          <TableHead
-            options={['HP','Attack','Speed','Colour', 'Value', 'Manage']}/>
-          <TableBody
-            name="choco-content"
-            list={this.state.stable}/>
-        </table>
-      </div>
+      <Grid item xs={12} sm={12} md={12}>
+        <Paper>
+          <Title message="Stable of Chocobos" />
+          <Table>
+            <TableHeader
+              values={['HP', 'Attack', 'Speed', 'Colour', 'Value', 'Manage']}
+            />
+            <TableContent name="stable-list" list={this.state.stable} />
+          </Table>
+        </Paper>
+      </Grid>
     );
   }
 }

@@ -1,37 +1,50 @@
 import React from 'react';
-import ChocoboNew from './components/ChocoboNew';
-import ChocoboList from './components/ChocoboList';
-import ContentTable from './components/ContentTable';
+import { NavLink, Route } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Birthplace from './Birthplace';
+import Leaders from './Leaders';
+import Stable from './Stable';
+import Training from './Training';
 
 const App = () =>
-  <div id="main" className="container-fluid text-center">
-    <h1>MasterGlaive</h1>
-    <p>Get the score of the chocobos of your stable.
-    So you will release your weakest chocobo.</p>
-    <ContentTable
-      description="Max level"
-      head={["lvl 99","lvl 80","lvl 50","lvl 30","lvl 20"]}
-      body={[
-        "This bird roosts at the top of the pecking order!",
-        "This bird's plumage exudes an air of prestige",
-        "This bird's feathers have a certain sheen about them",
-        "This bird is middle-of-the-flock in all regards",
-        "This bird does not stand out from the flock"
-      ]} />
-      <ContentTable
-        description="Bonus for training attributes"
-        head={["Any","stamina","fighter","speed","speed","nothing"]}
-        body={[
-          "It appears to possess incredible attributes",
-          "Its sturdy musculature should make it more resillient",
-          "It looks ready and raring for a good fight",
-          "Its quick reflex should help it sprint to and fro",
-          "Its powerful wings should allow it to stay aloft longer",
-          "It seems to possess no notable attributes"
-        ]} />
-    <p>Rank A+ in speed requires above 69 mph.</p>
-    <ChocoboList />
-    <ChocoboNew />
+  <div id="main">
+    <CssBaseline />
+    <AppBar position="static" color="default">
+      <Toolbar>
+        <Typography variant="title" color="inherit" noWrap>
+          MasterGlaive
+        </Typography>
+        <NavLink className="nav-link" activeClassName="active" to="/">
+          <Button color="inherit">
+            Birthplace status
+          </Button>
+        </NavLink>
+        <NavLink className="nav-link" activeClassName="active" to="/leaders">
+          <Button color="inherit">
+            City leaders
+          </Button>
+        </NavLink>
+        <NavLink className="nav-link" activeClassName="active" to="/stable">
+          <Button color="inherit">
+            Stable
+          </Button>
+        </NavLink>
+        <NavLink className="nav-link" activeClassName="active" to="/training">
+          <Button color="inherit">
+            Training
+          </Button>
+        </NavLink>
+      </Toolbar>
+    </AppBar>
+
+    <Route exact path="/" component={Birthplace}/>
+    <Route path="/leaders" component={Leaders}/>
+    <Route path="/stable" component={Stable}/>
+    <Route path="/training" component={Training}/>
   </div>;
 
 export default App;

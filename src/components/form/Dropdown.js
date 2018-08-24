@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import NativeSelect from '@material-ui/core/NativeSelect';
 
-const Dropdown = (props) =>
-  <div className="col">
-    <label htmlFor={props.name} className="form-label">{props.title}</label>
-    <select
+const Dropdown = props =>
+  <FormControl margin="normal" required>
+    <InputLabel htmlFor={props.name}>
+      {props.title}
+    </InputLabel>
+    <NativeSelect
       name={props.name}
-      defaultValue={props.selectedOption}
-      className="form-select form-control">
+      defaultValue={props.selectedOption}>
       {props.options.map(opt => {
         return (
           <option
@@ -15,8 +19,8 @@ const Dropdown = (props) =>
             value={opt}>{opt}</option>
         );
       })}
-    </select>
-  </div>;
+    </NativeSelect>
+  </FormControl>;
 
 Dropdown.propTypes = {
   name: PropTypes.string.isRequired,
