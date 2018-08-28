@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import BasicCard from './components/BasicCard';
+import BasicCard from '../components/BasicCard';
 
 const Leaders = () => (
   <main>
@@ -39,6 +39,12 @@ const Leaders = () => (
           'Todd Portabello – Treasure Donations',
           'Olga Boore – Meteorshard Donations',
           'Norris Dweller – 20% Munitions Discount'
+        ]}/>
+      <BasicCard
+        title='Norduscaen Garrison'
+        content={[
+          'Aiden Lunder – Item shop Opening',
+          'Killian West – Gil Discount'
         ]}/>
     </Grid>
   </main>

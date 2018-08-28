@@ -9,9 +9,12 @@ const SingleInput = (props) =>
     <InputLabel htmlFor={props.name}>{props.title}</InputLabel>
     <Input
       id={props.name}
+      name={props.name}
+      onChange={props.onChange}
       type={props.inputType}
       placeholder={props.placeholder}
       value={props.content}
+      required={props.required}
       inputProps={{
         'aria-label': 'Description',
       }}
