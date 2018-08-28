@@ -13,10 +13,10 @@ const App = () =>
 
     <Header/>
 
-    <Route exact path="/" component={Birthplace}/>
-    <Route path="/leaders" component={Leaders}/>
-    <Route path="/stable" component={Stable}/>
-    <Route path="/training" component={Training}/>
+    <Route exact path="/masterglaive/" component={Birthplace}/>
+    <Route exact path="/masterglaive/leaders" component={Leaders}/>
+    <Route exact path="/masterglaive/stable" component={Stable}/>
+    <Route exact path="/masterglaive/training" component={Training}/>
   </div>;
 
 export default App;
