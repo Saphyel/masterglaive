@@ -7,8 +7,7 @@ const Birthplace = () => (
     <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
       <AdvanceCard
         title='Altissia'
-        subtitle='The attacking all-rounder birthplace'
-        headline='Birthplace of many resilient folks, blessed with high vitality, spirit and max HP.'
+        subtitle='Birthplace of resilient people. They are granted bonuses to vitality, spirit and max HP.'
         content={[
           '504 HP',
           '55 MP',
@@ -19,8 +18,7 @@ const Birthplace = () => (
         ]}/>
       <AdvanceCard
         title='Galahd'
-        subtitle='The high magic all-rounder birthplace'
-        headline='Birthplace of many offensive specialists, blessed with high power and magic.'
+        subtitle='Birthplace of offensive specialists. They are blessed with a higher level of power and magic. They are both adept at melee combat and with offensive spells.'
         content={[
           '480 HP',
           '55 MP',
@@ -31,8 +29,7 @@ const Birthplace = () => (
         ]}/>
       <AdvanceCard
         title='Insomnia'
-        subtitle='The mage marvel birthplace'
-        headline='Birthplace of many spellcasting specialists, blessed with high magic and max MP.'
+        subtitle='Birthplace of the magical specialists. They are given high magic and high max MP.'
         content={[
           '432 HP',
           '60 MP',
@@ -43,8 +40,7 @@ const Birthplace = () => (
         ]}/>
       <AdvanceCard
         title='Lestallum'
-        subtitle='The tank birthplace'
-        headline='Birthplace of many all-out attackers, blessed with high power and max HP.'
+        subtitle='Birthplace of the most aggressive. They are all-out attackers blessed with high power and max HP.'
         content={[
           '528 HP',
           '49 MP',
@@ -55,8 +51,7 @@ const Birthplace = () => (
         ]}/>
       <AdvanceCard
         title='Tenebrae'
-        subtitle='The magic specialist birthplace'
-        headline='Birthplace of many blessed with high magic, spirit, and max MP, but deficient in other areas.'
+        subtitle='Birthplace of many blessed with high magic, spirit, and max MP, but deficient in other areas.'
         requirement='Rematch: The Pyreburner`s Trial'
         content={[
           '336 HP',
@@ -68,8 +63,7 @@ const Birthplace = () => (
         ]}/>
       <AdvanceCard
         title='Gralea'
-        subtitle='The offensive specialist birthplace'
-        headline='Birthplace of many blessed with high Power, Vitality, and max HP, but deficient in other areas.'
+        subtitle='Birthplace of many blessed with high Power, Vitality, and max HP, but deficient in other areas.'
         requirement='Final Round: The Bladekeeper`s Trial'
         content={[
           '600 HP',

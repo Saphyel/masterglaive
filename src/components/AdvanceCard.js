@@ -12,9 +12,6 @@ const AdvanceCard = props =>
     <Card>
       <CardHeader title={props.title} subheader={props.subtitle}/>
       <CardContent>
-        <Typography color="textSecondary">
-          {props.headline}
-        </Typography>
         {props.requirement ? (
         <Typography color="secondary">
           Requires: {props.requirement}
@@ -27,7 +24,6 @@ const AdvanceCard = props =>
 AdvanceCard.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  headline: PropTypes.string.isRequired,
   requirement: PropTypes.string,
   content: PropTypes.array.isRequired
 };
