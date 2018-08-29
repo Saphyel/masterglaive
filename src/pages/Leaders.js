@@ -4,7 +4,7 @@ import BasicCard from '../components/BasicCard';
 
 const Leaders = () => (
   <main>
-    <Grid container spacing={40} alignItems="flex-end">
+    <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
     <BasicCard
       title='Lestallum'
       content={[

@@ -4,7 +4,7 @@ import ContentTable from '../components/ContentTable';
 
 const Training = () =>
   <main>
-    <Grid container spacing={40} alignItems="flex-end">
+    <Grid container spacing={8} alignItems="stretch" justify="center">
       <ContentTable
         description="Max level"
         head={["lvl 99","lvl 80","lvl 50","lvl 30","lvl 20"]}

@@ -37,7 +37,7 @@ class ChocoboList extends React.Component {
 
   render() {
     return (
-      <Grid item xs={12} sm={12} md={12}>
+      <Grid item xs>
         <Paper>
           <Title message="Stable of Chocobos"/>
           <Table>

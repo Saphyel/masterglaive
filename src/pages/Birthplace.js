@@ -4,7 +4,7 @@ import AdvanceCard from '../components/AdvanceCard';
 
 const Birthplace = () => (
   <main>
-    <Grid container spacing={40} alignItems="flex-end">
+    <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
       <AdvanceCard
         title='Altissia'
         subtitle='The attacking all-rounder birthplace'

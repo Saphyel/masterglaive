@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Title from './Title';
 
 const ContentTable = (props) =>
-  <Grid item xs={12} sm={12} md={12}>
+  <Grid item xs>
     <Paper>
       <Title message={props.description} />
       <Table>
