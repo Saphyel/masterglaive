@@ -18,7 +18,7 @@ const Birthplaces = () => (
           title={birthplace.title}
           subtitle={birthplace.subtitle}
           requirement={birthplace.requirement}
-          content={birthplace.contents}
+          content={birthplace.content}
         />
       )}
     </Grid>
