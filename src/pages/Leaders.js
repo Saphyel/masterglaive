@@ -1,51 +1,24 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import BasicCard from '../components/BasicCard';
+import leaders from '../data/leaders.json'
 
 const Leaders = () => (
   <main>
-    <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
-    <BasicCard
-      title='Lestallum'
-      content={[
-        'Marcia Lythe – Treasure Donations',
-        'Finnegan Parton – Gil Donations',
-        'Torben Talum – 20% Munitions Discount'
-      ]}/>
+    <Grid
+      container
+      spacing={8}
+      direction="column"
+      alignItems="stretch"
+      justify="center"
+    >
+    {leaders.map(leader =>
       <BasicCard
-        title='Old Lestallum'
-        content={[
-          'Ernie Sypert – Treasure Donations',
-          'Camilla Mescall – Gil Donations',
-          'Russel Springs – Meteorshard Donations'
-        ]}/>
-      <BasicCard
-        title='Old Lestallum 2'
-        content={[
-          'Elyria Ostis – Treasure Donations',
-          'Harper Flint – Meteorshard Donations',
-          'Matteo Marchesi – Gil Donations'
-        ]}/>
-      <BasicCard
-        title='Meldacio Hunter HQ'
-        content={[
-          'Devon Elkton – Trading Post Opening',
-          'Biggs Callux – Gil Donations',
-          'Wedge Kincaid – 20% Imperial Discount'
-        ]}/>
-      <BasicCard
-        title='Meldacio Hunter HQ 2'
-        content={[
-          'Todd Portabello – Treasure Donations',
-          'Olga Boore – Meteorshard Donations',
-          'Norris Dweller – 20% Munitions Discount'
-        ]}/>
-      <BasicCard
-        title='Norduscaen Garrison'
-        content={[
-          'Aiden Lunder – Item shop Opening',
-          'Killian West – Gil Discount'
-        ]}/>
+        key={leader.id}
+        title={leader.title}
+        content={leader.contents}
+      />
+    )}
     </Grid>
   </main>
 )

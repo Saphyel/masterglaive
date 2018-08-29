@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import AdvanceCard from '../components/AdvanceCard';
 
-const Birthplace = () => (
+const Birthplaces = () => (
   <main>
     <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
       <AdvanceCard
@@ -77,4 +77,4 @@ const Birthplace = () => (
   </main>
 )
 
-export default Birthplace;
+export default Birthplaces;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Birthplace from './pages/Birthplace';
+import Birthplaces from './pages/Birthplaces';
 import Leaders from './pages/Leaders';
 import Stable from './pages/Stable';
 import Training from './pages/Training';
@@ -13,7 +13,7 @@ const App = () =>
 
     <Header/>
 
-    <Route exact path="/masterglaive/" component={Birthplace}/>
+    <Route exact path="/masterglaive/" component={Birthplaces}/>
     <Route path="/masterglaive/leaders" component={Leaders}/>
     <Route path="/masterglaive/stable" component={Stable}/>
     <Route path="/masterglaive/training" component={Training}/>

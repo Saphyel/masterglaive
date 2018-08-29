@@ -1,0 +1,31 @@
+[
+  {"id": 1, "title":"Lestallum", "contents":[
+    "Marcia Lythe – Treasure Donations",
+    "Finnegan Parton – Gil Donations",
+    "Torben Talum – 20% Munitions Discount"
+  ]},
+  {"id": 2, "title":"Old Lestallum", "contents":[
+    "Ernie Sypert – Treasure Donations",
+    "Camilla Mescall – Gil Donations",
+    "Russel Springs – Meteorshard Donations"
+  ]},
+  {"id": 3, "title":"Old Lestallum 2", "contents":[
+    "Elyria Ostis – Treasure Donations",
+    "Harper Flint – Meteorshard Donations",
+    "Matteo Marchesi – Gil Donations"
+  ]},
+  {"id": 4, "title":"Meldacio Hunter HQ", "contents":[
+    "Devon Elkton – Trading Post Opening",
+    "Biggs Callux – Gil Donations",
+    "Wedge Kincaid – 20% Imperial Discount"
+  ]},
+  {"id": 5, "title":"Meldacio Hunter HQ 2", "contents":[
+    "Todd Portabello – Treasure Donations",
+    "Olga Boore – Meteorshard Donations",
+    "Norris Dweller – 20% Munitions Discount"
+  ]},
+  {"id": 6, "title":"Norduscaen Garrison", "contents":[
+    "Aiden Lunder – Item shop Opening",
+    "Killian West – Gil Discount"
+  ]}
+]
