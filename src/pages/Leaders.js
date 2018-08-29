@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import BasicCard from '../components/BasicCard';
-import leaders from '../data/leaders.json'
+import leaders from '../data/leaders.json';
 
 const Leaders = () => (
   <main>
@@ -12,13 +12,13 @@ const Leaders = () => (
       alignItems="stretch"
       justify="center"
     >
-    {leaders.map(leader =>
-      <BasicCard
-        key={leader.id}
-        title={leader.title}
-        content={leader.contents}
-      />
-    )}
+      {leaders.map(leader =>
+        <BasicCard
+          key={leader.id}
+          title={leader.title}
+          content={leader.contents}
+        />
+      )}
     </Grid>
   </main>
 )
