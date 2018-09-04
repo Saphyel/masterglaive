@@ -11,22 +11,22 @@ const Header = () =>
       <Typography variant="title" color="inherit" noWrap>
         MasterGlaive
       </Typography>
-      <NavLink className="nav-link" activeClassName="active" to="/masterglaive/">
+      <NavLink className="nav-link" activeClassName="active" to="/">
         <Button color="inherit">
           Birthplace status
         </Button>
       </NavLink>
-      <NavLink className="nav-link" activeClassName="active" to="/masterglaive/leaders">
+      <NavLink className="nav-link" activeClassName="active" to="/leaders">
         <Button color="inherit">
           City leaders
         </Button>
       </NavLink>
-      <NavLink className="nav-link" activeClassName="active" to="/masterglaive/stable">
+      <NavLink className="nav-link" activeClassName="active" to="/stable">
         <Button color="inherit">
           Stable
         </Button>
       </NavLink>
-      <NavLink className="nav-link" activeClassName="active" to="/masterglaive/training">
+      <NavLink className="nav-link" activeClassName="active" to="/training">
         <Button color="inherit">
           Training
         </Button>
