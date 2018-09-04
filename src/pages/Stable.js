@@ -56,7 +56,13 @@ class Stable extends React.Component {
   render() {
     return (
       <main>
-        <Grid container spacing={8} direction="column" alignItems="stretch" justify="center">
+        <Grid
+          container
+          spacing={8}
+          direction="column"
+          alignItems="stretch"
+          justify="center"
+        >
           <ChocoboList
             items={this.state.stable}
             DeleteItem={this.DeleteItem}

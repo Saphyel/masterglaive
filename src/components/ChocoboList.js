@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
-import Title from './Title';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import TableBody from '@material-ui/core/TableBody';
 import Button from '@material-ui/core/Button';
+import Title from './Title';
 
 class ChocoboList extends React.Component {
 
@@ -43,34 +43,30 @@ class ChocoboList extends React.Component {
           <Table>
             <TableHead>
               <TableRow>
-              {this.props.header.map(header => {
-                return (
-                  <TableCell key={header}>{header}</TableCell>
-                );
-              })}
+              {this.props.header.map(header =>
+                <TableCell key={header}>{header}</TableCell>
+              )}
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.props.items.map(opt => {
-                return (
-                  <TableRow key={opt.id}>
-                    <TableCell>{opt.chocobo.hp}</TableCell>
-                    <TableCell>{opt.chocobo.attack}</TableCell>
-                    <TableCell>{opt.chocobo.speed}</TableCell>
-                    <TableCell>{opt.chocobo.colour}</TableCell>
-                    <TableCell>{this.calculator(opt.chocobo)}</TableCell>
-                    <TableCell>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => this.props.DeleteItem(opt.id)}
-                      >
-                        Delete
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
+              {this.props.items.map(opt =>
+                <TableRow key={opt.id}>
+                  <TableCell>{opt.chocobo.hp}</TableCell>
+                  <TableCell>{opt.chocobo.attack}</TableCell>
+                  <TableCell>{opt.chocobo.speed}</TableCell>
+                  <TableCell>{opt.chocobo.colour}</TableCell>
+                  <TableCell>{this.calculator(opt.chocobo)}</TableCell>
+                  <TableCell>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => this.props.DeleteItem(opt.id)}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              )}
             </TableBody>
           </Table>
         </Paper>

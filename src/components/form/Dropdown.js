@@ -13,11 +13,9 @@ const Dropdown = props =>
       name={props.name}
       onChange={props.onChange}
       defaultValue={props.selectedOption}>
-      {props.options.map(opt => {
-        return (
-          <option key={opt} value={opt}>{opt}</option>
-        );
-      })}
+      {props.options.map(opt =>
+        <option key={opt} value={opt}>{opt}</option>
+      )}
     </NativeSelect>
   </FormControl>;
 

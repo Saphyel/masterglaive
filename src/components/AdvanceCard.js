@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Paragraph from './Paragraph';
 
 const AdvanceCard = props =>
-  <Grid item xs>
+  <Grid item sm={6} md={6} lg={6}>
     <Card>
       <CardHeader title={props.title} subheader={props.subtitle}/>
       <CardContent>

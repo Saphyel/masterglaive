@@ -2,7 +2,7 @@
   "name": "masterglaive",
   "version": "0.1.0",
   "license" : "MIT",
-  "homepage": "https://saphyel.github.io/masterglaive/",
+  "homepage": "https://saphyel.github.io/masterglaive",
   "dependencies": {
     "@material-ui/core": "^1.5.0",
     "idb-keyval": "^3.0.5",

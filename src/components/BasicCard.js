@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Paragraph from './Paragraph';
 
 const BasicCard = props =>
-  <Grid item xs>
+  <Grid item sm={6} md={6} lg={6}>
     <Card>
       <CardHeader title={props.title}/>
       <CardContent>

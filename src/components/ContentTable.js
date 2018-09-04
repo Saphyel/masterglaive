@@ -8,8 +8,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Title from './Title';
 
-const ContentTable = (props) =>
-  <Grid item xs>
+const ContentTable = props =>
+  <Grid item sm={6} md={6} lg={6}>
     <Paper>
       <Title message={props.title} />
       <Table>

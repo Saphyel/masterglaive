@@ -20,13 +20,7 @@ class Birthplaces extends React.Component {
   render() {
     return (
       <main>
-        <Grid
-          container
-          spacing={8}
-          direction="column"
-          alignItems="stretch"
-          justify="center"
-        >
+        <Grid container spacing={8} alignItems="stretch">
           {this.state.birthplaces.map(birthplace =>
             <AdvanceCard
               key={birthplace.id}

@@ -32,6 +32,6 @@ const Header = () =>
         </Button>
       </NavLink>
     </Toolbar>
-  </AppBar>
+  </AppBar>;
 
 export default Header;
