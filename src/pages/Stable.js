@@ -61,7 +61,6 @@ class Stable extends React.Component {
           spacing={8}
           direction="column"
           alignItems="stretch"
-          justify="center"
         >
           <ChocoboList
             items={this.state.stable}

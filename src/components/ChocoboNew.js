@@ -2,7 +2,6 @@ import React from 'react';
 import SingleInput from './form/SingleInput';
 import Dropdown from './form/Dropdown';
 import Paper from '@material-ui/core/Paper';
-import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Title from './Title';
@@ -43,7 +42,13 @@ class ChocoboNew extends React.Component {
         <Paper>
           <Title message="Add a new chocobo"/>
           <form className="new" onSubmit={this.handleSubmit}>
-            <FormGroup row>
+            <Grid
+              container
+              spacing={16}
+              justify="center"
+              alignItems="stretch"
+              direction="row"
+            >
               <SingleInput
                 inputType={'number'}
                 title={'HP'}
@@ -60,8 +65,6 @@ class ChocoboNew extends React.Component {
                 required={true}
                 onChange={this.handleChange}
               />
-            </FormGroup>
-            <FormGroup row>
               <Dropdown
                 title={'Colour'}
                 name={'colour'}
@@ -76,12 +79,17 @@ class ChocoboNew extends React.Component {
                 onChange={this.handleChange}
                 selectedOption={this.state.speed}
               />
-            </FormGroup>
-            <FormGroup row>
-              <Button variant="raised" color="primary" type="submit">
-                Add
-              </Button>
-            </FormGroup>
+              <Grid item xs={3} wrap='wrap'>
+                <Button
+                  size="large"
+                  variant="raised"
+                  color="primary"
+                  type="submit"
+                >
+                  Add
+                </Button>
+              </Grid>
+            </Grid>
           </form>
         </Paper>
       </Grid>

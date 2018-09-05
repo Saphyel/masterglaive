@@ -58,6 +58,7 @@ class ChocoboList extends React.Component {
                   <TableCell>{this.calculator(opt.chocobo)}</TableCell>
                   <TableCell>
                     <Button
+                      size="small"
                       variant="contained"
                       color="secondary"
                       onClick={() => this.props.DeleteItem(opt.id)}
