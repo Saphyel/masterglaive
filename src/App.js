@@ -10,9 +10,7 @@ import Header from "./components/Header";
 const App = () =>
   <div id="main">
     <CssBaseline />
-
     <Header/>
-
     <Route exact path="/" component={Birthplaces}/>
     <Route path="/leaders" component={Leaders}/>
     <Route path="/stable" component={Stable}/>
