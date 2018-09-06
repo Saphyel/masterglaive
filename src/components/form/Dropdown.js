@@ -8,9 +8,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 const Dropdown = props =>
   <Grid item xs={5}>
     <FormControl margin="normal" required>
-      <InputLabel htmlFor={props.name}>
-        {props.title}
-      </InputLabel>
+      <InputLabel htmlFor={props.name}>{props.title}</InputLabel>
       <NativeSelect
         name={props.name}
         onChange={props.onChange}
