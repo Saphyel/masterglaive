@@ -1,5 +1,5 @@
 self.addEventListener('push', function(event) {
-    const title = 'ChocoGlaive';
+    const title = 'MasterGlaive';
     const options = {
         body: event.data.text(),
         icon: 'favicon.ico',
