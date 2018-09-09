@@ -5,5 +5,5 @@ export const TrainingService = {
 };
 
 function fetchAll() {
-    return training;
+    return new Promise((resolve, reject) => resolve(training));
 }

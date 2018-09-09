@@ -10,7 +10,7 @@ class Leaders extends React.Component {
   }
 
   async getItems() {
-    return {leaders: LeaderService.fetchAll()};
+    return {leaders: await LeaderService.fetchAll()};
   }
 
   async componentDidMount() {

@@ -10,7 +10,7 @@ class Birthplaces extends React.Component {
   }
 
   async getItems() {
-    return {birthplaces: BirthdayService.fetchAll()};
+    return {birthplaces: await BirthdayService.fetchAll()};
   }
 
   async componentDidMount() {

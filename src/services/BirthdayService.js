@@ -5,5 +5,5 @@ export const BirthdayService = {
 };
 
 function fetchAll() {
-    return birthplaces;
+    return new Promise((resolve, reject) => resolve(birthplaces));
 }

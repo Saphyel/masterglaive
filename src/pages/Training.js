@@ -10,7 +10,7 @@ class Training extends React.Component {
   }
 
   async getItems() {
-    return {training: TrainingService.fetchAll()};
+    return {training: await TrainingService.fetchAll()};
   }
 
   async componentDidMount() {

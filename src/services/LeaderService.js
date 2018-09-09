@@ -5,5 +5,5 @@ export const LeaderService = {
 };
 
 function fetchAll() {
-    return leaders;
+    return new Promise((resolve, reject) => resolve(leaders));
 }
