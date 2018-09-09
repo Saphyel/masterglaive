@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import ChocoboNew from '../components/ChocoboNew';
 import ChocoboList from '../components/ChocoboList';
 import { get, keys, set, del } from "idb-keyval";
 
@@ -54,6 +53,8 @@ class Stable extends React.Component {
   };
 
   render() {
+    const {stable} = this.state;
+
     return (
       <main>
         <Grid
@@ -63,11 +64,11 @@ class Stable extends React.Component {
           alignItems="stretch"
         >
           <ChocoboList
-            items={this.state.stable}
+            items={stable}
             DeleteItem={this.DeleteItem}
             header={['HP', 'Attack', 'Speed', 'Colour', 'Value', 'Manage']}
+            addNewItem={this.addNewItem}
           />
-          <ChocoboNew addNewItem={this.addNewItem}/>
         </Grid>
       </main>
     )

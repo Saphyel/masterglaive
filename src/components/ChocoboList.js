@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
+import SingleInput from './form/SingleInput';
+import Dropdown from './form/Dropdown';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -11,6 +15,48 @@ import Button from '@material-ui/core/Button';
 import Title from './Title';
 
 class ChocoboList extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+      hp: '',
+      attack: '',
+      colour: 'Red',
+      speed: 'D'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleClickOpen = () => this.setState({open: true});
+
+  handleClose = () => this.setState({open: false});
+
+  handleChange(event) {
+    this.setState({[event.target.name]: event.target.value});
+  }
+
+  validChocobo = () => {
+    if (this.state.hp === '') return false;
+    if (this.state.attack === '') return false;
+    return true;
+  };
+
+  handleSubmit(event) {
+    event.preventDefault();
+    if (this.validChocobo()) {
+      this.props.addNewItem(
+        this.state.hp,
+        this.state.attack,
+        this.state.colour,
+        this.state.speed,
+      );
+      this.handleClose();
+    }
+  }
 
   calcSpeed(value) {
     if (value === 'C') {
@@ -31,7 +77,8 @@ class ChocoboList extends React.Component {
   calculator(chocobo) {
     const hp = parseInt(chocobo.hp);
     const attack = parseInt(chocobo.attack);
-    const speed = this.calcSpeed(chocobo.speed)
+    const speed = this.calcSpeed(chocobo.speed);
+
     return Math.round((hp / 20) + (attack / 10) + speed);
   }
 
@@ -43,9 +90,9 @@ class ChocoboList extends React.Component {
           <Table>
             <TableHead>
               <TableRow>
-              {this.props.header.map(header =>
-                <TableCell key={header}>{header}</TableCell>
-              )}
+                {this.props.header.map(header =>
+                  <TableCell key={header}>{header}</TableCell>
+                )}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -70,6 +117,78 @@ class ChocoboList extends React.Component {
               )}
             </TableBody>
           </Table>
+          <Button
+            variant="raised"
+            size="large"
+            color="primary"
+            onClick={this.handleClickOpen}
+          >
+            New chocobo
+          </Button>
+          <Dialog open={this.state.open} onClose={this.handleClose}>
+            <DialogTitle>Add a new chocobo</DialogTitle>
+            <Grid
+              container
+              spacing={16}
+              justify="center"
+              alignItems="stretch"
+              direction="row"
+            >
+              <form id="chocobo" name="chocobo" onSubmit={this.handleSubmit}>
+                <SingleInput
+                  inputType={'number'}
+                  title={'HP'}
+                  name={'hp'}
+                  placeholder={'2000'}
+                  required={true}
+                  ref="chocobo"
+                  onChange={this.handleChange}
+                />
+                <SingleInput
+                  inputType={'number'}
+                  title={'Attack'}
+                  name={'attack'}
+                  placeholder={'1000'}
+                  required={true}
+                  ref="chocobo"
+                  onChange={this.handleChange}
+                />
+                <Dropdown
+                  title={'Colour'}
+                  name={'colour'}
+                  options={['Red', 'Blue', 'Yellow', 'Black', 'Green']}
+                  selectedOption={this.state.colour}
+                  onChange={this.handleChange}
+                />
+                <Dropdown
+                  title={'Speed'}
+                  name={'speed'}
+                  options={['D', 'C', 'B', 'A', 'A+']}
+                  onChange={this.handleChange}
+                  selectedOption={this.state.speed}
+                />
+                <Grid item xs={4}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    onClick={this.handleSubmit}
+                  >
+                    Add
+                  </Button>
+                </Grid>
+                <Grid item xs={4}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.handleClose}
+                  >
+                    Cancel
+                  </Button>
+                </Grid>
+              </form>
+            </Grid>
+          </Dialog>
         </Paper>
       </Grid>
     );
