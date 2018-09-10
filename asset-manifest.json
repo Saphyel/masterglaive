@@ -1,9 +1,9 @@
 {
   "runtime~main.js": "/masterglaive/static/js/runtime~main.40903a19.js",
   "runtime~main.js.map": "/masterglaive/static/js/runtime~main.40903a19.js.map",
-  "vendors.js": "/masterglaive/static/js/vendors.bc431e6a.chunk.js",
-  "vendors.js.map": "/masterglaive/static/js/vendors.bc431e6a.chunk.js.map",
-  "main.js": "/masterglaive/static/js/main.6c880a45.chunk.js",
-  "main.js.map": "/masterglaive/static/js/main.6c880a45.chunk.js.map",
+  "vendors.js": "/masterglaive/static/js/vendors.bdb40ebf.chunk.js",
+  "vendors.js.map": "/masterglaive/static/js/vendors.bdb40ebf.chunk.js.map",
+  "main.js": "/masterglaive/static/js/main.2da8bf6a.chunk.js",
+  "main.js.map": "/masterglaive/static/js/main.2da8bf6a.chunk.js.map",
   "index.html": "/masterglaive/index.html"
 }
