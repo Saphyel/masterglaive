@@ -8,6 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
+import Typography from "@material-ui/core/Typography";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
@@ -109,6 +110,11 @@ class ChocoboList extends React.Component {
               )}
             </TableBody>
           </Table>
+          {this.props.items.length ? null : (
+            <Typography align="center" variant="subheading">
+              Your stable is empty!
+            </Typography>
+          )}
           <RaisedButton color="primary" size="large" click={this.handleClickOpen}>
             New chocobo
           </RaisedButton>
@@ -156,7 +162,6 @@ class ChocoboList extends React.Component {
                   <RaisedButton
                     color="primary"
                     size="large"
-                    click={this.handleSubmit}
                     type="submit"
                     disabled={this.invalidChocobo()}
                   >

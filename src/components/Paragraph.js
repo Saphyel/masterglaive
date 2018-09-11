@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 const uuidv1 = require("uuid/v1");
 
 const Paragraph = props =>
-  <Typography component="p">
+  <Typography variant="body1">
     {props.sentences.map(text =>
       <span key={uuidv1()}>{text}<br/></span>
     )}
