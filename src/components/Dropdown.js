@@ -12,7 +12,8 @@ const Dropdown = props =>
       <NativeSelect
         name={props.name}
         onChange={props.onChange}
-        defaultValue={props.selectedOption}>
+        defaultValue={props.selectedOption}
+      >
         {props.options.map(opt =>
           <option key={opt} value={opt}>{opt}</option>
         )}
@@ -23,8 +24,9 @@ const Dropdown = props =>
 Dropdown.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
-  selectedOption: PropTypes.string
+  onChange: PropTypes.func,
+  selectedOption: PropTypes.string,
+  options: PropTypes.array.isRequired
 };
 
 export default Dropdown;

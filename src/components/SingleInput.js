@@ -10,29 +10,26 @@ const SingleInput = props =>
     <FormControl margin="normal">
       <InputLabel htmlFor={props.name}>{props.title}</InputLabel>
       <Input
+        type={props.type}
         id={props.name}
         name={props.name}
-        onChange={props.onChange}
-        type={props.inputType}
         placeholder={props.placeholder}
         value={props.content}
-        required={props.required}
+        onChange={props.onChange}
         inputProps={{
-          "aria-label": "Description",
+          "aria-label": "Description"
         }}
       />
     </FormControl>
   </Grid>;
 
 SingleInput.propTypes = {
-  inputType: PropTypes.oneOf(["text", "number"]).isRequired,
+  type: PropTypes.oneOf(["text", "number"]).isRequired,
   title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  content: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ])
+  onChange: PropTypes.func,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default SingleInput;

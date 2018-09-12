@@ -1,9 +1,9 @@
 import training from "../data/training.json";
 
 export const TrainingService = {
-    fetchAll
+  fetchAll
 };
 
 function fetchAll() {
-    return new Promise((resolve, reject) => resolve(training));
+  return new Promise((resolve, reject) => resolve(training));
 }

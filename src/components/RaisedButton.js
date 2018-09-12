@@ -7,8 +7,8 @@ const RaisedButton = props =>
     variant="raised"
     color={props.color}
     size={props.size}
-    onClick={props.click}
     type={props.type}
+    onClick={props.onClick}
     disabled={props.disabled}
   >
     {props.children}
@@ -17,8 +17,8 @@ const RaisedButton = props =>
 RaisedButton.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
-  click: PropTypes.func,
   type: PropTypes.string,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool
 };
 

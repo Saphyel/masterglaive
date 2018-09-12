@@ -11,17 +11,17 @@ import Title from "./Title";
 const ContentTable = props =>
   <Grid item sm={6} md={6} lg={6}>
     <Paper>
-      <Title message={props.title} />
+      <Title>{props.title}</Title>
       <Table>
         <TableBody>
-          {props.headers.map((value, index) => {
-            return (
+          {props.headers.map((value, index) =>
               <TableRow key={value}>
-                <TableCell component="th" scope="row">{value}</TableCell>
+                <TableCell component="th" variant="head" scope="row">
+                  {value}
+                </TableCell>
                 <TableCell>{props.contents[index]}</TableCell>
               </TableRow>
-            );
-          })}
+          )}
         </TableBody>
       </Table>
     </Paper>
@@ -30,7 +30,7 @@ const ContentTable = props =>
 ContentTable.propTypes = {
   title: PropTypes.string.isRequired,
   headers: PropTypes.array.isRequired,
-  contents: PropTypes.array.isRequired,
+  contents: PropTypes.array.isRequired
 };
 
 export default ContentTable;

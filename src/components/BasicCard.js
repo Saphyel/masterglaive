@@ -9,7 +9,7 @@ import Paragraph from "./Paragraph";
 const BasicCard = props =>
   <Grid item sm={6} md={6} lg={6}>
     <Card>
-      <CardHeader title={props.title}/>
+      <CardHeader title={props.title} />
       <CardContent><Paragraph sentences={props.content} /></CardContent>
     </Card>
   </Grid>;

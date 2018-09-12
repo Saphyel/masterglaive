@@ -5,11 +5,11 @@ import Typography from "@material-ui/core/Typography";
 
 const Title = props =>
   <Toolbar variant="dense">
-    <Typography variant="title">{props.message}</Typography>
+    <Typography variant="title">{props.children}</Typography>
   </Toolbar>;
 
 Title.propTypes = {
-  message: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired
 };
 
 export default Title;

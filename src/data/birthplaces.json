@@ -2,7 +2,7 @@
     "id": 1,
     "title": "Lestallum",
     "subtitle": "Birthplace of the most aggressive. They are all-out attackers blessed with high power and max HP.",
-    "requirement": "",
+    "require": "",
     "content": [
       "528 HP",
       "49 MP",
@@ -16,7 +16,7 @@
     "id": 2,
     "title": "Altissia",
     "subtitle": "Birthplace of resilient people. They are granted bonuses to vitality, spirit and max HP.",
-    "requirement": "",
+    "require": "",
     "content": [
       "504 HP",
       "55 MP",
@@ -30,7 +30,7 @@
     "id": 3,
     "title": "Galahd",
     "subtitle": "Birthplace of offensive specialists. They are blessed with a higher level of power and magic. They are both adept at melee combat and with offensive spells.",
-    "requirement": "",
+    "require": "",
     "content": [
       "480 HP",
       "55 MP",
@@ -44,7 +44,7 @@
     "id": 4,
     "title": "Insomnia",
     "subtitle": "Birthplace of the magical specialists. They are given high magic and high max MP.",
-    "requirement": "",
+    "require": "",
     "content": [
       "432 HP",
       "60 MP",
@@ -58,7 +58,7 @@
     "id": 5,
     "title": "Tenebrae",
     "subtitle": "Birthplace of many blessed with high magic, spirit, and max MP, but deficient in other areas.",
-    "requirement": "Rematch: The Pyreburner`s Trial",
+    "require": "Rematch: The Pyreburner`s Trial",
     "content": [
       "336 HP",
       "63 MP",
@@ -72,7 +72,7 @@
     "id": 6,
     "title": "Gralea",
     "subtitle": "Birthplace of many blessed with high Power, Vitality, and max HP, but deficient in other areas.",
-    "requirement": "Final Round: The Bladekeeper`s Trial",
+    "require": "Final Round: The Bladekeeper`s Trial",
     "content": [
       "600 HP",
       "38 MP",

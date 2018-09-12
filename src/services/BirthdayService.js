@@ -1,9 +1,9 @@
 import birthplaces from "../data/birthplaces.json";
 
 export const BirthdayService = {
-    fetchAll
+  fetchAll
 };
 
 function fetchAll() {
-    return new Promise((resolve, reject) => resolve(birthplaces));
+  return new Promise((resolve, reject) => resolve(birthplaces));
 }

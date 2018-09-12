@@ -10,12 +10,11 @@ import Paragraph from "./Paragraph";
 const AdvanceCard = props =>
   <Grid item sm={6} md={6} lg={6}>
     <Card>
-      <CardHeader title={props.title} subheader={props.subtitle}/>
+      <CardHeader title={props.title} subheader={props.subtitle} />
       <CardContent>
-        {props.requirement ? (
-        <Typography color="secondary">
-          Requires: {props.requirement}
-        </Typography> ) : null}
+        {props.require ? (
+          <Typography color="secondary">Requires: {props.require}</Typography>
+        ) : null}
         <Paragraph sentences={props.content} />
       </CardContent>
     </Card>
@@ -24,7 +23,7 @@ const AdvanceCard = props =>
 AdvanceCard.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  requirement: PropTypes.string,
+  require: PropTypes.string,
   content: PropTypes.array.isRequired
 };
 

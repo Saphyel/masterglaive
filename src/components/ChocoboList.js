@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
-import SingleInput from "./form/SingleInput";
-import Dropdown from "./form/Dropdown";
+import SingleInput from "./SingleInput";
+import Dropdown from "./Dropdown";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Paper from "@material-ui/core/Paper";
@@ -16,7 +16,6 @@ import Title from "./Title";
 import RaisedButton from "./RaisedButton";
 
 class ChocoboList extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -51,7 +50,7 @@ class ChocoboList extends React.Component {
       this.state.hp,
       this.state.attack,
       this.state.colour,
-      this.state.speed,
+      this.state.speed
     );
     this.handleClose();
   }
@@ -59,14 +58,11 @@ class ChocoboList extends React.Component {
   calcSpeed(value) {
     if (value === "C") {
       return 110;
-    }
-    else if (value === "B") {
+    } else if (value === "B") {
       return 120;
-    }
-    else if (value === "A") {
+    } else if (value === "A") {
       return 130;
-    }
-    else if (value === "A+") {
+    } else if (value === "A+") {
       return 140;
     }
     return 100;
@@ -77,14 +73,14 @@ class ChocoboList extends React.Component {
     const attack = parseInt(chocobo.attack);
     const speed = this.calcSpeed(chocobo.speed);
 
-    return Math.round((hp / 20) + (attack / 10) + speed);
+    return Math.round(hp / 20 + attack / 10 + speed);
   }
 
   render() {
     return (
       <Grid item xs>
         <Paper>
-          <Title message="Stable of Chocobos"/>
+          <Title>Stable of Chocobos</Title>
           <Table>
             <TableHead>
               <TableRow>
@@ -102,7 +98,11 @@ class ChocoboList extends React.Component {
                   <TableCell>{opt.chocobo.colour}</TableCell>
                   <TableCell>{this.calculator(opt.chocobo)}</TableCell>
                   <TableCell>
-                    <RaisedButton color="secondary" size="small" click={() => this.props.DeleteItem(opt.id)}>
+                    <RaisedButton
+                      color="secondary"
+                      size="small"
+                      onClick={() => this.props.DeleteItem(opt.id)}
+                    >
                       Delete
                     </RaisedButton>
                   </TableCell>
@@ -115,12 +115,20 @@ class ChocoboList extends React.Component {
               Your stable is empty!
             </Typography>
           )}
-          <RaisedButton color="primary" size="large" click={this.handleClickOpen}>
+          <RaisedButton
+            color="primary"
+            size="large"
+            onClick={this.handleClickOpen}
+          >
             New chocobo
           </RaisedButton>
           <Dialog open={this.state.open} onClose={this.handleClose} fullWidth>
             <DialogTitle>Add a new chocobo</DialogTitle>
-            <form id="chocobo" name="chocobo" onSubmit={() => this.handleSubmit()}>
+            <form
+              id="chocobo"
+              name="chocobo"
+              onSubmit={() => this.handleSubmit()}
+            >
               <Grid
                 container
                 spacing={16}
@@ -129,19 +137,17 @@ class ChocoboList extends React.Component {
                 direction="row"
               >
                 <SingleInput
-                  inputType={"number"}
+                  type={"number"}
                   title={"HP"}
                   name={"hp"}
                   placeholder={"2000"}
-                  required={true}
                   onChange={this.handleChange}
                 />
                 <SingleInput
-                  inputType={"number"}
+                  type={"number"}
                   title={"Attack"}
                   name={"attack"}
                   placeholder={"1000"}
-                  required={true}
                   onChange={this.handleChange}
                 />
                 <Dropdown
@@ -155,8 +161,8 @@ class ChocoboList extends React.Component {
                   title={"Speed"}
                   name={"speed"}
                   options={["D", "C", "B", "A", "A+"]}
-                  onChange={this.handleChange}
                   selectedOption={this.state.speed}
+                  onChange={this.handleChange}
                 />
                 <Grid item xs={4}>
                   <RaisedButton
@@ -172,7 +178,7 @@ class ChocoboList extends React.Component {
                   <RaisedButton
                     color="secondary"
                     size="large"
-                    click={this.handleClose}
+                    onClick={this.handleClose}
                   >
                     Cancel
                   </RaisedButton>
@@ -188,7 +194,7 @@ class ChocoboList extends React.Component {
 
 ChocoboList.propTypes = {
   header: PropTypes.array.isRequired,
-  items: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired
 };
 
 export default ChocoboList;

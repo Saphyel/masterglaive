@@ -1,9 +1,9 @@
 import leaders from "../data/leaders.json";
 
 export const LeaderService = {
-    fetchAll
+  fetchAll
 };
 
 function fetchAll() {
-    return new Promise((resolve, reject) => resolve(leaders));
+  return new Promise((resolve, reject) => resolve(leaders));
 }

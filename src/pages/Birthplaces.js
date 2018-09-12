@@ -28,7 +28,7 @@ class Birthplaces extends React.Component {
               key={birthplace.id}
               title={birthplace.title}
               subtitle={birthplace.subtitle}
-              requirement={birthplace.requirement}
+              require={birthplace.require}
               content={birthplace.content}
             />
           )}
