@@ -1,9 +1,11 @@
 {
-  "runtime~main.js": "/masterglaive/static/js/runtime~main.40903a19.js",
-  "runtime~main.js.map": "/masterglaive/static/js/runtime~main.40903a19.js.map",
-  "vendors.js": "/masterglaive/static/js/vendors.5f90a301.chunk.js",
-  "vendors.js.map": "/masterglaive/static/js/vendors.5f90a301.chunk.js.map",
-  "main.js": "/masterglaive/static/js/main.70ea3d51.chunk.js",
-  "main.js.map": "/masterglaive/static/js/main.70ea3d51.chunk.js.map",
-  "index.html": "/masterglaive/index.html"
+  "main.js": "/masterglaive/static/js/main.916fa7ee.chunk.js",
+  "main.js.map": "/masterglaive/static/js/main.916fa7ee.chunk.js.map",
+  "static/js/1.577338eb.chunk.js": "/masterglaive/static/js/1.577338eb.chunk.js",
+  "static/js/1.577338eb.chunk.js.map": "/masterglaive/static/js/1.577338eb.chunk.js.map",
+  "runtime~main.js": "/masterglaive/static/js/runtime~main.791d6deb.js",
+  "runtime~main.js.map": "/masterglaive/static/js/runtime~main.791d6deb.js.map",
+  "index.html": "/masterglaive/index.html",
+  "precache-manifest.35f0a57a350489fc68dae7aa8de9608b.js": "/masterglaive/precache-manifest.35f0a57a350489fc68dae7aa8de9608b.js",
+  "service-worker.js": "/masterglaive/service-worker.js"
 }
