@@ -1,16 +1,85 @@
 version: 2
 jobs:
-  build:
+  checkout_code:
     docker:
-      - image: node:8.10-alpine
+      - image: saphyel/node:8.10-alpine
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
-      - run:
-          name: install-modules
-          command: yarn install
       - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: code-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ./
+
+  build:
+    docker:
+      - image: saphyel/node:8.10-alpine
+    steps:
+      - restore_cache:
+          keys:
+            - code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: modules-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Packages
+          command: yarn install --cache-folder ~/.cache/yarn
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: modules-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
+            - ~/.cache/yarn
+
+  test:
+    docker:
+      - image: saphyel/node:8.10-alpine
+    steps:
+      - restore_cache:
+          keys:
+            - code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: modules-{{ checksum "yarn.lock" }}
+      - run:
+          name: Run tests
+          command: yarn install
+
+  deploy:
+    docker:
+      - image: saphyel/node:8.10-alpine
+    steps:
+      - restore_cache:
+          keys:
+            - code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: modules-{{ checksum "yarn.lock" }}
+      - run:
+          name: Run build
+          command: yarn build
+
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - checkout_code
+      - build:
+          requires:
+            - checkout_code
+      - test:
+          requires:
+            - build
+
+  build_and_deploy:
+    jobs:
+      - checkout_code:
+          filters:
+            branches:
+              only: master
+      - build:
+          requires:
+            - checkout_code
+      - deploy:
+          requires:
+            - build
