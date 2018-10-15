@@ -61,6 +61,9 @@ jobs:
       - run:
           name: Create an optimized production build
           command: yarn build
+      - add_ssh_keys:
+          fingerprints:
+            - "84:3e:2d:ed:ab:69:0d:41:1f:f6:79:c4:f9:c7:71:96"
       - run:
           name: Deploy to github
           command: yarn deploy
