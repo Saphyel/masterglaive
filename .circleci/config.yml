@@ -66,19 +66,19 @@ jobs:
             - "84:3e:2d:ed:ab:69:0d:41:1f:f6:79:c4:f9:c7:71:96"
       - deploy:
           name: Deploy to github pages
-          command: yarn deploy -x -u "${GH_NAME} <${GH_EMAIL}>" -r https://${GH_TOKEN}@github.com/Saphyel/masterglaive.git
+          command: yarn --silent deploy -x -u "${GH_NAME} <${GH_EMAIL}>" -r https://${GH_TOKEN}@github.com/Saphyel/masterglaive.git
 
 workflows:
   version: 2
   pipeline:
     jobs:
-      - checkout_code:
-          filters:
-            branches:
-              ignore: gh-pages
+      - checkout_code
       - build:
           requires:
             - checkout_code
+          filters:
+            branches:
+              ignore: gh-pages
       - test:
           requires:
             - build
