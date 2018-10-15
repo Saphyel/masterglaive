@@ -66,11 +66,7 @@ jobs:
             - "84:3e:2d:ed:ab:69:0d:41:1f:f6:79:c4:f9:c7:71:96"
       - deploy:
           name: Deploy to github pages
-          command: |
-            git config --global user.email "$GH_EMAIL"
-            git config --global user.name "$GH_NAME"
-            yarn deploy
-
+          command: yarn deploy -u "${GH_NAME} <${GH_EMAIL}>" -r https://${GH_EMAIL}@github.com/Saphyel/masterglaive.git
 
 workflows:
   version: 2
