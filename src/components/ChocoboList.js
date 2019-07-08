@@ -131,7 +131,6 @@ class ChocoboList extends React.Component {
             >
               <Grid
                 container
-                spacing={16}
                 justify="center"
                 alignItems="stretch"
                 direction="row"
