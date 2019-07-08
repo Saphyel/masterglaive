@@ -122,7 +122,7 @@ class ChocoboList extends React.Component {
           >
             New chocobo
           </RaisedButton>
-          <Dialog open={this.state.open} onClose={this.handleClose} fullWidth>
+          <Dialog open={this.state.open} onClose={this.handleClose} variant="fullWidth">
             <DialogTitle>Add a new chocobo</DialogTitle>
             <form
               id="chocobo"

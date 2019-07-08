@@ -83,7 +83,7 @@ class Chocobos extends React.Component {
     return (
       <main>
         <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange} fullWidth>
+          <Tabs value={value} onChange={this.handleChange} variant="fullWidth">
             <Tab value="stable" label="Stable" />
             <Tab value="training" label="Training" />
           </Tabs>
