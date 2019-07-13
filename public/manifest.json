@@ -1,4 +1,5 @@
 {
+  "short_name": "MasterGlaive",
   "name": "MasterGlaive",
   "description": "MasterGlaive, Unofficial final fantasy XV Comrades app",
   "icons": [
@@ -8,7 +9,6 @@
       "type": "image/x-icon"
     }
   ],
-  "short_name": "MasterGlaive",
   "start_url": "/masterglaive/",
   "display": "standalone",
   "theme_color": "#000000",
