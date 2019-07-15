@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import BasicCard from "../components/BasicCard";
-import {LeaderService} from "../services/LeaderService";
+import LeaderService from "../services/LeaderService";
 
 class Leaders extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class Leaders extends React.Component {
   }
 
   async getItems() {
-    return {leaders: await LeaderService.fetchAll()};
+    return {leaders: await new LeaderService().fetchAll()};
   }
 
   async componentDidMount() {

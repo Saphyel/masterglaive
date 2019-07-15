@@ -5,7 +5,7 @@ import ContentTable from "../components/ContentTable";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import ChocoboList from "../components/ChocoboList";
-import {TrainingService} from "../services/TrainingService";
+import TrainingService from "../services/TrainingService";
 import {ChocoboService} from "../services/ChocoboService";
 
 function Stable(props) {
@@ -50,7 +50,7 @@ class Chocobos extends React.Component {
   async getItems() {
     return {
       stable: await ChocoboService.fetchAll(),
-      training: await TrainingService.fetchAll()
+      training: await new TrainingService().fetchAll()
     };
   }
 

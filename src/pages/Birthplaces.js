@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import AdvanceCard from "../components/AdvanceCard";
-import {BirthdayService} from "../services/BirthdayService";
+import BirthdayService from "../services/BirthdayService";
 
 class Birthplaces extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class Birthplaces extends React.Component {
   }
 
   async getItems() {
-    return {birthplaces: await BirthdayService.fetchAll()};
+    return {birthplaces: await new BirthdayService().fetchAll()};
   }
 
   async componentDidMount() {
