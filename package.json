@@ -1,6 +1,6 @@
 {
   "name": "masterglaive",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "homepage": "https://saphyel.github.io/masterglaive",
   "dependencies": {
@@ -10,6 +10,7 @@
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
+    "@types/uuid": "^3.4.5",
     "idb-keyval": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
