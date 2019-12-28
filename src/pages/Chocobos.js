@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import ChocoboList from "../components/ChocoboList";
 import TrainingService from "../services/TrainingService";
-import {ChocoboService} from "../services/ChocoboService";
+import ChocoboService from "../services/ChocoboService";
 
 function Stable(props) {
   return (
@@ -49,7 +49,7 @@ class Chocobos extends React.Component {
 
   async getItems() {
     return {
-      stable: await ChocoboService.fetchAll(),
+      stable: await new ChocoboService().fetchAll(),
       training: await new TrainingService().fetchAll()
     };
   }
@@ -59,7 +59,7 @@ class Chocobos extends React.Component {
   }
 
   addNewItem = (hp, attack, colour, speed) => {
-    const item = ChocoboService.insert(hp, attack, colour, speed);
+    const item = new ChocoboService().insert(hp, attack, colour, speed);
     this.setState(prevState => {
       prevState.stable.push(item);
       return {stable: prevState.stable};
@@ -67,7 +67,7 @@ class Chocobos extends React.Component {
   };
 
   DeleteItem = (id) => {
-    ChocoboService.remove(id);
+    new ChocoboService().remove(id);
 
     this.setState(prevState => {
       prevState.stable = prevState.stable.filter(chocobo => chocobo.id !== id);

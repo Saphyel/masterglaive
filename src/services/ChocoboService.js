@@ -1,44 +1,37 @@
 import {Store, get, keys, set, del} from "idb-keyval";
+import {v4 as uuid} from 'uuid';
 
-const uuidv1 = require("uuid/v1");
-const customStore = new Store('saphyel', 'masterglaive');
+export default class ChocoboService {
+  store = new Store('saphyel', 'masterglaive');
 
-export const ChocoboService = {
-  fetchAll,
-  fetch,
-  insert,
-  remove
-};
-
-async function fetchAll() {
-  let payload = [];
-  const Ids = await keys(customStore);
-  for (let i = 0; i < Ids.length; i++) {
-    payload.push({id: Ids[i], chocobo: await fetch(Ids[i])})
+  async fetchAll() {
+    let payload = [];
+    const Ids = await keys(this.store);
+    for (let i = 0; i < Ids.length; i++) {
+      payload.push({id: Ids[i], chocobo: await this.fetch(Ids[i])})
+    }
+    return payload;
   }
-  return payload;
-}
 
-async function fetch(id) {
-  return await get(id, customStore);
-}
+  async fetch(id) {
+    return get(id, this.store);
+  }
 
-function insert(hp, attack, colour, speed) {
-  const id = uuidv1();
-  const payload = {
-    hp: hp,
-    attack: attack,
-    speed: speed,
-    colour: colour
-  };
+  async insert(hp, attack, colour, speed) {
+    const id = uuid();
+    const payload = {
+      hp: hp,
+      attack: attack,
+      speed: speed,
+      colour: colour
+    };
 
-  set(id, payload, customStore);
+    set(id, payload, this.store);
 
-  return {id: id, chocobo: payload};
-}
+    return {id: id, chocobo: payload};
+  }
 
-async function remove(id) {
-  await del(id, customStore);
-
-  return true;
+  async remove(id) {
+    await del(id, this.store);
+  }
 }

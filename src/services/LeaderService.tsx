@@ -1,9 +1,7 @@
 import leaders from "../data/leaders.json";
 
-class LeaderService {
+export default class LeaderService {
   fetchAll() {
     return new Promise((resolve, reject) => resolve(leaders));
   }
 }
-
-export default LeaderService;

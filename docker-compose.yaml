@@ -2,14 +2,13 @@ version: '3'
 
 services:
   app:
-    image: node:10.15-alpine
+    image: node:10-alpine
     volumes:
-      - ./:/var/www:cached
+      - ./:/app:cached
       - ~/.ssh/id_rsa:/root/.ssh/id_rsa:cached
       - $SSH_AUTH_SOCK:/ssh-agent:cached
-    ports:
-      - 3000:3000
-    working_dir: /var/www
+    ports: [3000:3000]
+    working_dir: /app
     command: yarn start
     environment:
       REACT_APP_API_HOST: http://localhost:3000
