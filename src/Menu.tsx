@@ -1,28 +1,47 @@
-import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import Birthplaces from "./pages/Birthplaces";
-import Leaders from "./pages/Leaders";
-import Chocobos from "./pages/Chocobos";
-import MenuLink from "./components/MenuLink";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import AppBar from "@material-ui/core/AppBar";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  useLocation
+} from "react-router-dom";
+
+import BirthplacesPage from './pages/BirthplacesPage';
+import LeadersPage from './pages/LeadersPage';
+import ChocobosPage from './pages/ChocobosPage';
 
 const Menu: React.FC = () =>
-  <Router basename="/masterglaive">
-    <AppBar position="static" color="default">
-      <Toolbar>
-        <Typography variant="h6" color="inherit" noWrap>
-          MasterGlaive
-        </Typography>
-        <MenuLink link="/" message="Birthplace status" />
-        <MenuLink link="/leaders" message="City leaders" />
-        <MenuLink link="/chocobos" message="Chocobos" />
-      </Toolbar>
-    </AppBar>
-    <Route exact path="/" component={Birthplaces}/>
-    <Route path="/leaders" component={Leaders}/>
-    <Route path="/chocobos" component={Chocobos}/>
-  </Router>;
+  <header className="App-header">
+    <h1>MasterGlaive</h1>
+    <Router>
+      <div id={'menu'}>
+        <ul>
+          <li><Link to="/">Birthplaces</Link></li>
+          <li><Link to="/leaders">Leaders</Link></li>
+          <li><Link to="/chocobos">Chocobos</Link></li>
+        </ul>
+        <hr/>
+        <Switch>
+          <Route exact path="/"><BirthplacesPage/></Route>
+          <Route path="/leaders"><LeadersPage/></Route>
+          <Route path="/chocobos"><ChocobosPage/></Route>
+
+          <Route path="*"><NoMatch/></Route>
+        </Switch>
+      </div>
+    </Router>
+  </header>;
+
+
+function NoMatch() {
+  const location = useLocation();
+
+  return (
+    <div>
+      <h3>No match for <code>{location.pathname}</code></h3>
+    </div>
+  );
+}
 
 export default Menu;

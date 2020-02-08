@@ -1,8 +1,8 @@
 [{
     "id": 1,
     "title": "Max level",
-    "headers": ["Level 99", "Level 80", "Level 50", "Level 30", "Level 20"],
-    "contents": [
+    "result": ["Level 99", "Level 80", "Level 50", "Level 30", "Level 20"],
+    "message": [
       "This bird roosts at the top of the pecking order!",
       "This bird's plumage exudes an air of prestige.",
       "This bird's feathers have a certain sheen about them.",
@@ -13,8 +13,8 @@
   {
     "id": 2,
     "title": "Bonus for training attributes",
-    "headers": ["Any", "Stamina", "Fighter", "Speed", "Nothing"],
-    "contents": [
+    "result": ["Any", "Stamina", "Fighter", "Speed", "Nothing"],
+    "message": [
       "It appears to possess incredible attributes.",
       "Its sturdy musculature should make it more resillient.",
       "It looks ready and raring for a good fight.",
